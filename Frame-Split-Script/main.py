@@ -4,9 +4,6 @@
 import cv2
 from os import listdir
 from os.path import isfile, join
-from scipy import misc
-import scipy.misc
-import imageio
 
 mypath = "img/"
 editedPath = "edited/"
@@ -28,7 +25,3 @@ for i in range(len(onlyfiles)):
 
     cv2.imwrite(f"edited/test{z}.png", s2)
     z += 1
-
-# imageCV = cv2.imread(f"img/{onlyfiles[0]}")
-# cv2.imshow("image", imageCV)
-# cv2.waitKey(0)
