@@ -11,16 +11,23 @@ import imageio
 mypath = "img/"
 editedPath = "edited/"
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-theImg = cv2.imread(f"{mypath}{onlyfiles[0]}")
-height, width, layers = theImg.shape
 
-widthCutoff = width // 2
-s1 = theImg[:, :widthCutoff]
-s2 = theImg[:, widthCutoff:]
+z = 0
 
-i = 0
-cv2.imwrite(f"edited/test1.png", s1)
-cv2.imwrite(f"edited/test2.png", s2)
+for i in range(len(onlyfiles)):
+    theImg = cv2.imread(f"{mypath}{onlyfiles[i]}")
+    height, width, layers = theImg.shape
+
+    widthCutoff = width // 2
+    s1 = theImg[:, :widthCutoff]
+    s2 = theImg[:, widthCutoff:]
+
+
+    cv2.imwrite(f"edited/test{z}.png", s1)
+    z += 1
+
+    cv2.imwrite(f"edited/test{z}.png", s2)
+    z += 1
 
 # imageCV = cv2.imread(f"img/{onlyfiles[0]}")
 # cv2.imshow("image", imageCV)
