@@ -25,3 +25,7 @@ for i in range(len(onlyfiles)):
 
     cv2.imwrite(f"edited/test{z}.png", s2)
     z += 1
+
+    print("Working on image number {}".format(i))
+
+print("Finished!")
